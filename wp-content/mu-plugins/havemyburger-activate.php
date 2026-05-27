@@ -1,41 +1,25 @@
 <?php
 /**
- * Plugin Name: HaveMyBurger Theme Activator
- * Description: Force-activates the HaveMyBurger theme on every request so the
- *              landing page is served on a fresh WordPress install without
- *              needing wp-admin access. Lives in mu-plugins so it loads
- *              automatically and cannot be deactivated by mistake.
- * Version: 1.0.0
- * Author: HaveMyBurger
+ * Plugin Name: HaveMyBurger Setup
+ * Description: Activates the HaveMyBurger theme and sets site title on first request.
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+declare(strict_types=1);
 
-add_filter( 'pre_option_template',   'havemyburger_force_template'   );
-add_filter( 'pre_option_stylesheet', 'havemyburger_force_template'   );
-add_filter( 'pre_option_blogname',   'havemyburger_force_blogname'   );
-add_filter( 'pre_option_blogdescription', 'havemyburger_force_tagline' );
+add_action(
+	'after_setup_theme',
+	static function (): void {
+		if ( get_option( 'havemyburger_setup_done' ) ) {
+			return;
+		}
 
-function havemyburger_force_template( $value ) {
-	$theme_dir = WP_CONTENT_DIR . '/themes/havemyburger';
-	if ( is_dir( $theme_dir ) && file_exists( $theme_dir . '/style.css' ) ) {
-		return 'havemyburger';
-	}
-	return $value;
-}
+		if ( wp_get_theme( 'havemyburger' )->exists() ) {
+			switch_theme( 'havemyburger' );
+		}
 
-function havemyburger_force_blogname( $value ) {
-	if ( empty( $value ) || preg_match( '~cloudwaysapps\.com$~i', (string) $value ) ) {
-		return 'HaveMyBurger Hotel';
-	}
-	return $value;
-}
-
-function havemyburger_force_tagline( $value ) {
-	if ( empty( $value ) || $value === 'Just another WordPress site' ) {
-		return 'Boutique stay where comfort meets character.';
-	}
-	return $value;
-}
+		update_option( 'blogname', 'HaveMyBurger Hotel' );
+		update_option( 'blogdescription', 'Boutique Luxury Stay' );
+		update_option( 'havemyburger_setup_done', true );
+	},
+	1
+);

@@ -1,0 +1,34 @@
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# OS & editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# WordPress — never commit server-specific config
+wp-config.php
+
+# Uploads & cache (managed on server)
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/backups/
+
+# Logs
+*.log
+error_log
+debug.log
+
+# Dependencies
+node_modules/
+vendor/
+
+# Archives
+*.zip
+*.tar.gz

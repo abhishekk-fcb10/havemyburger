@@ -5,6 +5,12 @@
       "name": "HaveMyBurger Hotel",
       "theme": "havemyburger",
       "status": "active"
+    },
+    {
+      "slug": "uluwatu-villa",
+      "name": "Uluwatu Cliff Villa",
+      "theme": "uluwatu-villa",
+      "status": "draft"
     }
   ]
 }

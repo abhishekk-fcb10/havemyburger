@@ -1,0 +1,13 @@
+{
+  "slug": "uluwatu-villa",
+  "name": "Uluwatu Cliff Villa",
+  "description": "Luxury 3-bedroom cliffside villa in Uluwatu, Bali",
+  "theme": "uluwatu-villa",
+  "type": "wordpress",
+  "cloudways": {
+    "appId": "",
+    "serverId": "",
+    "deployPath": "",
+    "gitBranch": "main"
+  }
+}

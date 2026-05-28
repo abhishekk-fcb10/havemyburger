@@ -32,3 +32,6 @@ vendor/
 # Archives
 *.zip
 *.tar.gz
+
+# Built deploy trees — run `npm run build -- <slug>` before commit/push
+# apps/*/site/ is committed so Cloudways Git Pull serves the built site

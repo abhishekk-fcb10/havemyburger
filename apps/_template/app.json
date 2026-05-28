@@ -1,0 +1,13 @@
+{
+  "slug": "{{SLUG}}",
+  "name": "{{NAME}}",
+  "description": "{{DESCRIPTION}}",
+  "theme": "{{SLUG}}",
+  "type": "wordpress",
+  "cloudways": {
+    "appId": "",
+    "serverId": "",
+    "deployPath": "",
+    "gitBranch": "main"
+  }
+}

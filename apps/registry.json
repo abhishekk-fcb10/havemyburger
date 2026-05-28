@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "slug": "havemyburger",
+      "name": "HaveMyBurger Hotel",
+      "theme": "havemyburger",
+      "status": "active"
+    }
+  ]
+}

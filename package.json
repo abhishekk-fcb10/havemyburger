@@ -1,0 +1,10 @@
+{
+  "name": "wp-monorepo",
+  "private": true,
+  "description": "Isolated WordPress apps monorepo for Cloudways",
+  "scripts": {
+    "apps": "node scripts/list-apps.mjs",
+    "new-app": "node scripts/new-app.mjs",
+    "build": "node scripts/build.mjs"
+  }
+}

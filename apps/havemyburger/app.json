@@ -1,0 +1,14 @@
+{
+  "slug": "havemyburger",
+  "name": "HaveMyBurger Hotel",
+  "description": "Boutique hotel landing site",
+  "theme": "havemyburger",
+  "type": "wordpress",
+  "cloudways": {
+    "appId": "6449234",
+    "serverId": "1577767",
+    "deployPath": "",
+    "webroot": "apps/havemyburger/site/",
+    "gitBranch": "main"
+  }
+}
